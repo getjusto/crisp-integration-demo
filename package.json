@@ -1,0 +1,29 @@
+{
+  "name": "crisp-orders-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "nicolaslopezj",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "nodemon src/index.ts",
+    "build": "tsc",
+    "serve": "node dist/index.js",
+    "generate-api-ts": "npx openapi-typescript https://raw.githubusercontent.com/getjusto/docs/main/docs/crisp/orders/endpoints/crispOrdersEndpoints.yml -o ./src/actions/types.ts",
+    "generate-webhooks-ts": "npx openapi-typescript https://raw.githubusercontent.com/getjusto/docs/main/docs/crisp/orders/webhooks/crispOrdersWebhooks.yml -o ./src/webhooks/types.ts"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.18",
+    "@types/node": "^20.7.1",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1",
+    "prettier": "^3.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "body-parser": "^1.20.2",
+    "dayjs": "^1.11.10"
+  }
+}
